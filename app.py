@@ -20,7 +20,7 @@ def load_subjects():
         with open(SUBJECTS_FILE, "r", encoding="utf-8") as f:
             return [line.strip() for line in f.readlines() if line.strip()]
     else:
-        default_subs = ["高等代数", "多元微积分", "理论物理", "英语", "其他"]
+        default_subs = ["数学分析","高等代数", "群论","常微分方程", "理论物理"]
         with open(SUBJECTS_FILE, "w", encoding="utf-8") as f:
             for sub in default_subs:
                 f.write(sub + "\n")
@@ -32,7 +32,7 @@ def load_countdown():
             return json.load(f)
     else:
         # 默认设定目标和日期
-        default_cd = {"event_name": "清华丘成桐数学领军计划考试", "target_date": "2026-10-01"}
+        default_cd = {"event_name": "清华丘成桐数学领军计划考试", "target_date": "2026-10-18"}
         with open(COUNTDOWN_FILE, "w", encoding="utf-8") as f:
             json.dump(default_cd, f)
         return default_cd
